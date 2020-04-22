@@ -1,8 +1,11 @@
-<canvas id="myChart" width="400" height="400"></canvas>
+<div class="chartCustomerDistribution">
+  <canvas id="myChart"></canvas>
+</div>
+
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
         labels: [
           {{#each rows}}
@@ -18,19 +21,18 @@ var myChart = new Chart(ctx, {
           ],
             backgroundColor: [
                 {{#each rows}}
-                `rgba(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, 0.2)`,
+                `rgba(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, 0.5)`,
+              {{/each}}
+            ],
+            hoverBackgroundColor: [
+                {{#each rows}}
+                `rgba(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`,
               {{/each}}
             ]
         }]
     },
     options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
+        cutoutPercentage: 25
     }
 });
 </script>

@@ -62,4 +62,11 @@ textarea {
   min-height: 8em;
   resize: vertical; }
 
+.chartCustomerDistribution {
+  margin: 5% auto;
+  width: 70%; }
+  .chartCustomerDistribution #myChart {
+    width: 200px;
+    height: 200px; }
+
 /*# sourceMappingURL=style.css.map */
