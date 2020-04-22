@@ -1,0 +1,36 @@
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [
+          {{#each rows}}
+            `{{this.Country}}`,
+          {{/each}}
+        ],
+        datasets: [{
+            label: 'Number of Custumers per Country',
+            data: [
+              {{#each rows}}
+                {{this.count}},
+              {{/each}}
+          ],
+            backgroundColor: [
+                {{#each rows}}
+                `rgba(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, 0.2)`,
+              {{/each}}
+            ]
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
