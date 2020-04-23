@@ -2,7 +2,7 @@
   box-sizing: border-box; }
 
 body {
-  max-width: 52em;
+  max-width: 90%;
   padding: 0 1em;
   margin: 0 auto;
   font-family: sans-serif;
@@ -65,7 +65,8 @@ textarea {
 .chartCustomerDistribution {
   margin: 5% auto;
   width: 70%; }
-  .chartCustomerDistribution #myChart {
+  .chartCustomerDistribution #myChart,
+  .chartCustomerDistribution #lineChartData {
     width: 200px;
     height: 200px; }
 

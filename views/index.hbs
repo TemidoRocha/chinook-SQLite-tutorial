@@ -1,10 +1,49 @@
+<article>
+  <h4>This page is entirely dedicated to experiment 'SQLite' and 'Chart.js'.</h4>
+  <p>I used the following web page as main documentation for this experiment:</p>
+  <ul>
+    <li><a href="https://cdn.sqlitetutorial.net/">SQLite Tutorial</a></li>
+    <li>
+    <a href="https://www.chartjs.org/">Chart.js</a></li>
+  </ul>
+</article>
+
 <table class="table">
   <tbody>
-    {{#each rows}}
-    <tr>
-      <th scope="row">{{this.id}}</th>
-      <td>{{this.name}}</td>
+    
+  </tbody>
+</table>
+
+<table class="table table-sm">
+  <thead>
+    <tr class="table-info">
+      <th scope="col">artist</th>
+      <th scope="col">album</th>
+      <th scope="col">media</th>
+      <th scope="col">genres</th>
+      <th scope="col">milisec</th>
+      <th scope="col">Bytes</th>
     </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+      <tr>
+        <th scope="row">{{this.artistName}}</th>
+        <td>{{this.album}}</td>
+        <td>{{this.media}}</td>
+        <td>{{this.genres}}</td>
+        <td>{{this.miliseconds}}</td>
+        <td>{{this.Bytes}}</td>
+      </tr>
     {{/each}}
   </tbody>
 </table>
+
+
+
+
+
+
+
+
+

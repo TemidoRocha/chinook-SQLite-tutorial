@@ -1,0 +1,55 @@
+<div class="chartCustomerDistribution">
+  <canvas id="lineChartData"></canvas>
+</div>
+<script>
+  var ctx = document.getElementById('lineChartData').getContext('2d');
+  var lineChartData = new Chart(ctx, {
+          type: 'line',
+    data: {
+        datasets: [{
+            data: [
+              {{#each rows}}
+                {{this.avg_lengInMin}},
+              {{/each}}
+            ],
+            borderColor: 'rgba(255, 0, 0, 0.2)',
+            backgroundColor: 'rgba(255, 0, 0, 0.2)',
+            label: 'Average Time in Minutes',
+
+            // This binds the dataset to the left y axis
+            yAxisID: 'left-y-axis'
+        }, {
+            data: [
+              {{#each rows}}
+                {{this.avg_sizeBytes}},
+              {{/each}}
+            ],
+              borderColor: 'rgba(0, 255, 0, 0.5)',
+              backgroundColor: 'rgba(0, 255, 0, 0.5)',
+            label: 'Average Size in Mb',
+
+            // This binds the dataset to the right y axis
+            yAxisID: 'right-y-axis'
+        }],
+        labels: [{{#each rows}}
+                  `{{this.Name}}`,
+                {{/each}}]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                id: 'left-y-axis',
+                type: 'linear',
+                position: 'left'
+            }, {
+                id: 'right-y-axis',
+                type: 'linear',
+                position: 'right'
+            }]
+        }
+    }
+});				
+</script>
+
+
+	
