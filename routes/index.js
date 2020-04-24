@@ -38,7 +38,7 @@ router.get('/', (req, res, next) => {
     if (err) {
       return console.error(err.message);
     }
-    console.log(rows);
+    // console.log(rows);
     res.render('index', { rows });
   });
 });
